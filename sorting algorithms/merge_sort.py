@@ -3,39 +3,49 @@ import random_numbers
 arr = random_numbers.fill_with_random_numbers()
 
 
-def merge_sort(arr):
-    if len(arr) > 1:
-        # divide array into two parts
-        left_part = arr[:len(arr) // 2]
-        right_part = arr[len(arr) // 2:]
+def merge(customList, l, m, r):
+    n1 = m - l + 1
+    n2 = r - m
 
-        # recursive call for both parts of array.
-        merge_sort(left_part)
-        merge_sort(right_part)
+    L = [0] * (n1)
+    R = [0] * (n2)
 
-        # three variables for indexes
-        i, j, k = 0, 0, 0
+    for i in range(0, n1):
+        L[i] = customList[l + i]
 
-        # main loop of merge sort. Append elements to right or left of the table
-        while i < len(left_part) and j < len(right_part):
-            if left_part[i] < right_part[j]:
-                arr[k] = left_part[i]
-                i += 1
-            else:
-                arr[k] = right_part[j]
-                j += 1
-            k += 1
+    for j in range(0, n2):
+        R[j] = customList[m + 1 + j]
 
-        # two sub loops for the same thing.
-        while i < len(left_part):
-            arr[k] = left_part[i]
+    i = 0
+    j = 0
+    k = l
+    while i < n1 and j < n2:
+        if L[i] <= R[j]:
+            customList[k] = L[i]
             i += 1
-            k += 1
-
-        while j < len(right_part):
-            arr[k] = right_part[j]
+        else:
+            customList[k] = R[j]
             j += 1
-            k += 1
+        k += 1
+    while i < n1:
+        customList[k] = L[i]
+        i += 1
+        k += 1
+
+    while j < n2:
+        customList[k] = R[j]
+        j += 1
+        k += 1
+
+def merge_sort(customList, l, r):
+    if l < r:
+        m = (l+(r-1))//2
+        merge_sort(customList, l, m)
+        merge_sort(customList, m + 1, r)
+        merge(customList, l, m, r)
+    return customList
+
+
 
 
 merge_sort(arr)
