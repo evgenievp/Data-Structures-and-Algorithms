@@ -26,13 +26,19 @@ class Stack:
             self.length -= 1
 
     def __repr__(self):
-        res = ''
         current = self.tail
-        while current.previous is not None:
+        res = ''
+        while current is not None:
             res += f"{current.data} -> "
-            if current.previous is None:
-                break
-        res += "None"
+            current = current.previous
+        res += "Null"
         return res
 
 
+ss = Stack()
+for i in range(10):
+    ss.add_node(Node(i))
+print(ss)
+for i in range(10):
+    ss.pop_element()
+    print(ss)
