@@ -66,7 +66,7 @@ class LinkedList:
     def print_circular_list(self):
         head = self.head
         res = ''
-        for i in range(self.value_for_print_circular_list):
+        for _ in range(self.value_for_print_circular_list):
             res += f"{head.value} -> "
             head = head.next
         print(res)
