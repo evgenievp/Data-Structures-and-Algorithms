@@ -14,6 +14,7 @@ def quicksort(arr):
             right_part_arr.append(el)
         else:
             left_part_arr.append(el)
+
     return quicksort(left_part_arr) + [pivot] + quicksort(right_part_arr)
 
 
