@@ -11,4 +11,3 @@ Hash Maps and Sets
 Divide and Conquer
 Recursion
 
-Implemented solutions are in Python now, but in the time I may upload some solutions written in other languages.
