@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/contains-duplicate/?envType=problem-list-v2&envId=array
+# https://leetcode.com/problems/contains-duplicate/?envType=problem-list-v2&envId=array
 def containsDuplicate(nums: list[int]) -> bool:
     dict = {}
 
@@ -9,5 +9,6 @@ def containsDuplicate(nums: list[int]) -> bool:
             return True
     return False
 
-nums = [1,2,3,1]
-print(containsDuplicate(nums)) #True
+
+nums = [1, 2, 3, 1]
+print(containsDuplicate(nums))  # True
