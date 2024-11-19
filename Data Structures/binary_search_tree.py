@@ -8,8 +8,7 @@ class TreeNode:
         self.right_child = right_child
 
 
-
-class Tree:
+class BinarySearchTree:
     def __init__(self):
         self.nodes = []
 
